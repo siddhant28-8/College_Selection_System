@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Colleges</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CDN -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+            background-image: url('University.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            color: #333;
+        }
+
+        /* Background overlay for better contrast */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4); /* Dark overlay */
+            z-index: -1;
+        }
+
+        /* Heading Styles */
+        h1{
+            font-family: 'Lora', serif;
+            color: #fff;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        h3, h2 {
+            font-family: 'Lora', serif;
+            color: #090909;
+            font-weight: 700;
+        }
+
+        h3 {
+            margin-top: 20px;
+        }
+
+        /* Card Styles */
+        .card {
+            background: linear-gradient(135deg, #f3f4f6, #e6e8ec); /* Soft gradient background */
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Button Styles */
+        .btn {
+            background: linear-gradient(135deg, #6fb1fc, #4364f7);
+            border: none;
+            border-radius: 25px;
+            color: #fff;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #4364f7, #6fb1fc);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn:focus {
+            outline: none;
+        }
+
+        /* Flexbox alignment for heading and button */
+        .card-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        /* Main Image */
+        .main-image {
+            width: 100%;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* Container and row adjustments */
+        .container {
+            padding-top: 50px;
+        }
+
+        .row {
+            margin-bottom: 20px;
+        }
+
+        /* Media Query for responsiveness */
+        @media (max-width: 768px) {
+            .btn {
+                width: 100%;
+                margin-top: 10px;
+            }
+            
+            .card-content {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container text-center">
+        <h1><b>Find the Best Engineering Colleges of Your Choice</b></h1><br>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-content">
+                        <h2><b>Find University-wise Engineering Colleges</b></h2>
+                        <a class="btn" href="/university"><i class="fas fa-search"></i> Search</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-content">
+                        <h2><b>Find State-wise Engineering Colleges</b></h2>
+                        <a class="btn" href="/state"><i class="fas fa-search"></i> Search</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-content">
+                        <h2><b>Find City-wise Engineering Colleges</b></h2>
+                        <a class="btn" href="/city"><i class="fas fa-search"></i> Search</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br>
+
+</body>
+</html>

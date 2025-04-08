@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/collegesinfo/css/style.css" />
+    <title>College Selector</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+            background-image: url('oxford.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            color: #333;
+        }
+
+        /* Background overlay for better contrast */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4); /* Dark overlay */
+            z-index: -1;
+        }
+        #myInput {
+            width: 80%; 
+            font-size: 16px;
+            padding: 12px 20px;
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+
+        .search-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff; /* Classy blue */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .search-btn:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+        .form-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+       
+        
+        #colleges-container{
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center; /* Centers the items horizontally */
+                    column-gap: 40px;        /* Larger horizontal gap between the cards */
+                    row-gap: 25px;   
+                    padding: 20px;
+                }
+            
+                .college-card {
+                    background-color: #f9f9f9;
+                    border: 1px solid #ccc;
+                    border-radius: 10px;
+                    padding: 20px;
+                    width: 300px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                }
+            
+                .college-card h2 {
+                    margin: 0 0 10px;
+                    font-size: 18px;
+                    color: #333;
+                }
+            
+                .college-location, .college-affiliation {
+                    margin-top: 10px;
+                }
+            
+                .college-location p, .college-affiliation p {
+                    margin: 5px 0;
+                    color: #555;
+                }
+            
+                .college-affiliation strong, .college-location strong {
+                    font-weight: bold;
+                }
+               
+        .topnav {
+            background-color: #0c0c0c;
+            padding-left: 75%;
+            overflow: hidden;
+            margin-bottom: 20px;
+          }
+          
+          .topnav a {
+            float: left;
+            color: #4099e2;
+            text-align: center;
+            padding: 14px 18px;
+            text-decoration: none;
+            font-size: 17px;
+          }
+          
+          
+          .topnav a:hover {
+            background-color: #5d0ebef5;
+            color: rgb(32, 4, 4);
+          }
+          .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+           /* background-color: rgb(21, 78, 100);
+            box-shadow: 0 0 10px rgba(33, 2, 2, 0.1);*/
+          }
+          .text{
+            padding-left: 50%;
+        
+          }
+          h1{
+            text-align: center;
+            color: #ffff;
+        }
+        .text-center{
+            text-align: center;
+            color: #ffff;
+        }
+           h2, h3 {
+            text-align: center;
+            color: #0e0101;
+          }
+
+          .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .pagination a {
+            color: #ffff;
+            padding: 8px 16px;
+            text-decoration: none;
+            border: none;
+            margin: 0 4px;
+            border-radius: 5px;
+        }
+        
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+            border: 1px solid #4CAF50;
+        }
+        
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+        button.info-button {
+            background-color: #87CEEB; /* Sky-blue background */
+            color: white; /* White text */
+            padding: 10px 0; /* Padding inside the button */
+            width: 100%; /* Full width of the card */
+            border: none; /* Remove default border */
+            border-radius: 5px; /* Rounded corners */
+            font-size: 16px; /* Increase font size */
+            cursor: pointer; /* Pointer on hover */
+            margin-top: 15px; /* Space above the button */
+            display: block; /* Make button a block element */
+        }
+        
+        button.info-button:hover {
+            background-color: #5bb7db; /* Darker sky-blue on hover */
+        }
+        
+        button.info-button a {
+            color: white; /* Ensure link text inside button is white */
+            text-decoration: none; /* Remove underline from the link */
+        }
+        
+        button.info-button a:hover {
+            color: white; /* Keep text white on hover */
+        }
+        
+       
+    </style>
+</head>
+<body>
+    <div>
+   <div class="topnav">
+        <a  href="/home">Home</a>
+        <a href="colleges.html">Colleges</a>
+        <a href="signin.html">Login</a>
+      </div>
+     
+      <script src="start.js"></script>
+      
+
+      <div class="container my-5">
+        <h1 class="text-center">College Selection System </h1>
+        <p class="text-center" style="text-align:center">
+          Find information about colleges, courses, and admission processes in India.
+        </p>
+        
+  </div>
+  <div class="form-container">
+    
+    <form id="searchForm" onsubmit="return false;">
+        <input type="text" id="myInput" name="collegeName" placeholder="Search Colleges By University Name..." title="Type in a name" required>
+        <button type="button" class="search-btn" id="searchButton"><i class="fas fa-search"></i> Search</button>
+    </form>
+    
+</div>
+    <div id="colleges-container">
+        <% colleges.forEach(function(college) { %>
+            <div class="college-card">
+                <h2 id ='College_name'><%= college.name %></h2>
+                <div class="college-location">
+                    <strong>Location:</strong>
+                    <p>
+                        <%= college.location.address %>, 
+                        <%= college.location.city %>, 
+                        <%= college.location.state %>
+                    </p>
+                </div>
+                <div class="college-affiliation">
+                    <strong>Affiliation:</strong>
+                    <p>
+                        Type: <%= college.affiliation.type %><br>
+                        University: <%= college.affiliation.university %><br>
+                        Status: <%= college.affiliation.status %><br>
+                        Minority: <%= college.affiliation.minority_status %>
+                    </p>
+                </div>
+                <div>
+                    <button class="info-button" data-college-name="<%= college.name %>">Get More Info...</button>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+    
+    <div class="pagination">
+        <% if (currentPage > 1) { %>
+            <a href="?page=<%= currentPage - 1 %>">&laquo; Previous</a>
+        <% } %>
+    
+        <% for (let i = 1; i <= totalPages; i++) { %>
+            <a href="?page=<%= i %>" class="<%= currentPage === i ? 'active' : '' %>"><%= i %></a>
+        <% } %>
+    
+        <% if (currentPage < totalPages) { %>
+            <a href="?page=<%= currentPage + 1 %>">Next &raquo;</a>
+        <% } %>
+    </div>
+  </div>
+    <script>
+
+        document.querySelectorAll('.info-button').forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+                const College_name = this.getAttribute('data-college-name');
+                window.location.href = `/college/${College_name}`;
+            });
+        });
+    
+        document.getElementById('searchButton').addEventListener('click', function() {
+            myFunction(); // Call the function when the button is clicked
+        });
+        
+        function myFunction() {
+            // Get the input element and filter value
+            var input = document.getElementById("myInput");
+            var filter = input.value.toUpperCase();
+        
+            // Get all the college cards inside the container
+            var collegeContainer = document.getElementById("colleges-container");
+            var collegeCards = collegeContainer.getElementsByClassName("college-card");
+        
+            // Loop through all college cards and hide those that don't match the search query
+            for (var i = 0; i < collegeCards.length; i++) {
+                var h2 = collegeCards[i].getElementsByTagName("h2")[0];
+                if (h2) {
+                    var txtValue = h2.textContent || h2.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        collegeCards[i].style.display = ""; // Show matching card
+                    } else {
+                        collegeCards[i].style.display = "none"; // Hide non-matching card
+                    }
+                }       
+            }
+        }
+        
+    </script>
+    
+</body>
+</html>
