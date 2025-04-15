@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= college.name %> - Detailed Information</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #F5F5F5; /* Light Gray */
+            margin: 0;
+            padding: 20px;
+            color: #333; /* Dark Charcoal */
+        }
+
+        .college-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .college-header {
+            background-color: #4A90E2; /* Elegant Blue */
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .college-header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        .college-header p {
+            font-size: 16px;
+        }
+
+        .card {
+            background-color: white; /* White background for the card */
+            border: 1px solid #D1D1D1; /* Soft Gray Border */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            margin-bottom: 10px;
+            color: #4A90E2; /* Elegant Blue */
+        }
+
+        .section p {
+            font-size: 16px;
+            margin: 8px 0;
+            color: #555; /* Muted Dark Gray */
+        }
+
+        .info {
+            margin-bottom: 10px;
+        }
+
+        /* Courses grid */
+        .course-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px; /* Space between courses */
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .course-item {
+            flex: 1 1 calc(33.33% - 20px); /* Three courses per row */
+            border: 1px solid #D1D1D1; /* Soft Gray Border */
+            border-radius: 8px;
+            background-color: #FFFFFF; /* White background */
+            padding: 20px;
+            box-sizing: border-box;
+            max-width: 100%;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .course-item h3 {
+            margin-top: 0;
+            color: #333; /* Dark Charcoal */
+        }
+
+        .course-item p {
+            margin: 4px 0;
+            color: #555; /* Muted Dark Gray */
+        }
+
+        .course-item ul {
+            padding-left: 20px;
+        }
+
+        /* Hover effect */
+        .course-item:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Shadow on hover */
+        }
+
+        /* Button Styles */
+        .info-button {
+            background-color: #4A90E2; /* Elegant Blue */
+            color: white;
+            padding: 10px 0;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .info-button:hover {
+            background-color: #357ABD; /* Darker Blue on hover */
+        }
+
+        /* Last updated */
+        .last-updated {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #888; /* Subtle Gray */
+        }
+
+        @media (max-width: 768px) {
+            .course-item {
+                flex: 1 1 calc(50% - 20px); /* Two courses per row for smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .course-item {
+                flex: 1 1 100%; /* One course per row on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="college-container">
+
+        <!-- College Header -->
+        <div class="college-header">
+            <h1><%= college.name %></h1>
+            <p>Established in <%= college.established_year %></p>
+            <p>AICTE Approval: <%= college.aicte_approval %></p>
+        </div>
+
+        <!-- Location Card -->
+        <div class="card">
+            <div class="section">
+                <h2>Location</h2>
+                <p class="info"><strong>Address:</strong> <%= college.location.address %></p>
+                <p class="info"><strong>City:</strong> <%= college.location.city %></p>
+                <p class="info"><strong>State:</strong> <%= college.location.state %></p>
+            </div>
+        </div>
+
+        <!-- Affiliation Card -->
+        <div class="card">
+            <div class="section">
+                <h2>Affiliation</h2>
+                <p class="info"><strong>Type:</strong> <%= college.affiliation.type %></p>
+                <p class="info"><strong>University:</strong> <%= college.affiliation.university %></p>
+                <p class="info"><strong>Status:</strong> <%= college.affiliation.status %></p>
+                <p class="info"><strong>Minority Status:</strong> <%= college.affiliation.minority_status %></p>
+            </div>
+        </div>
+
+        <!-- Courses Card with Grid Layout -->
+        <div class="card">
+            <div class="section">
+                <h2>Courses</h2>
+                <ul class="course-list">
+                    <% college.courses.forEach(function(course) { %>
+                        <li class="course-item">
+                            <h3><%= course.course_name %> (<%= course.course_type %>)</h3>
+                            <p><strong>Choice Code:</strong> <%= course.choice_code %></p>
+                            <p><strong>Accreditation Status:</strong> <%= course.accreditation_status %></p>
+                            <p><strong>Start Year:</strong> <%= course.start_year %></p>
+                            <p><strong>TFWS:</strong> <%= course.tfws ? 'Yes' : 'No' %></p>
+                            <p><strong>Admission Intake:</strong> Total - <%= course.admission_intake.total %></p>
+                            <ul>
+                                <li>CAP Other than MI: <%= course.admission_intake.cap_other_than_mi %></li>
+                                <li>IL Seats: <%= course.admission_intake.il_seats %></li>
+                                <li>CAP for MI: <%= course.admission_intake.cap_for_mi %></li>
+                            </ul>
+                            <% if (course.court_case_remark) { %>
+                                <p><strong>Court Case Remark:</strong> <%= course.court_case_remark %></p>
+                            <% } %>
+                        </li>
+                    <% }) %>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Last Updated Card -->
+        <div class="card last-updated">
+            <p><strong>Last Updated:</strong> <%= new Date(college.updated_at).toLocaleDateString() %></p>
+        </div>
+
+    </div>
+
+</body>
+</html>

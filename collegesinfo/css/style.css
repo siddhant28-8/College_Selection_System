@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #9ee3f0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgb(21, 78, 100);
+    box-shadow: 0 0 10px rgba(33, 2, 2, 0.1);
+  }
+  .text{
+    padding-left: 50%;
+
+  }
+  
+  h1, h2, h3 {
+    text-align: center;
+    color: #0e0101;
+  }
+  
+  
+  #colleges-list, #courses-list, #admissions-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .card {
+    width: 30%;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(51, 10, 10, 0);
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .card h3 {
+    color: #333333;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .filter {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  #reset-button {
+    background-color: #ccc;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+
+  .topnav {
+    background-color: #0c0c0c;
+    padding-left: 75%;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  
+  .topnav a {
+    float: left;
+    color: #4099e2;
+    text-align: center;
+    padding: 14px 18px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  
+  .topnav a:hover {
+    background-color: #5d0ebef5;
+    color: rgb(32, 4, 4);
+  }
+  
+ .images{
+    padding: 20px;
+ }
+ 
+
+ * {box-sizing:border-box}
+
+.img{
+  background-color:black;
+}
+
+.boxes{
+  background-color: rgb(211, 84, 211);
+  border-radius: 2px;
+}
