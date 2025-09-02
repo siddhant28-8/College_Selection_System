@@ -5,6 +5,7 @@ const app=express();                //instance is created of express
 const College=require('./collegelistMongodb.js');
 const SignupRouter=require('./routes/signup.js');
 const signinRouter = require('./routes/signin.js');
+require('dotenv').config();
 
 app.use(express.static('collegesinfo'));     //specify which static files (images)  need to be used to display data on ui
 app.use(bodyParser.urlencoded({extended:false}));  
@@ -154,7 +155,7 @@ app.get('/college/:College_name', async (req, res) => {
 
 
 
-const PORT=3000;
+const PORT=process.env.PORT;
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });

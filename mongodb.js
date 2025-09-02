@@ -4,7 +4,7 @@ const mongoose=require('mongoose');
 const { type } = require('os');
 const path=require('path');
 
-mongoose.connect('mongodb://127.0.0.1/collegeList')
+mongoose.connect(process.env.MONGO_URL)
 .then(()=>console.log('mongodb connected')).catch(()=>console.log(error));
 
 const schema =new mongoose.Schema({
